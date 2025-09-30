@@ -1,13 +1,18 @@
-Introduction
+DATA REPORT 
+
 Sales and customer behavior are critical key performance indicators for any company, as they directly inform customer insights and segmentation, sales forecasting and demand planning, marketing optimization, and customer retention strategies. To uncover actionable insights from our dataset, raw_sales_dataset, this comprehensive report integrates exploratory data analysis, anomaly detection, predictive modeling, clustering, and time-series forecasting.
 The primary objective is to understand the key drivers of customer churn and sales performance, identify unusual patterns, and support data-driven strategic decision-making. The analysis was conducted using Python for advanced modeling and analytics, Excel for initial data cleaning and preprocessing, and ChatGPT to generate clear, insightful narrative explanations and summaries throughout the report.
+
 Data Cleaning
+
 The data cleaning process was conducted in two key phases:
 •	Initial Cleaning in Excel:
 Using Excel's query editor, missing values in the columns "Income", "Credit_Score", and "Loan_Amount" were addressed by replacing them with the mean of their respective columns. This ensured that data integrity was maintained without introducing significant bias. Additionally, a thorough check for duplicates was performed, and no duplicate records were found in the dataset.
 •	Outlier Removal Using ChatGPT:
 In the second phase, ChatGPT was utilized to assist in identifying and removing outliers from the dataset. This step enhanced the quality and reliability of the data by eliminating extreme values that could skew analysis. As a result of this cleaning, the dataset was refined to a total of 405 records.
+
 Exploratory Data Analysis
+
 1)	Sales Insights 
 The first graph highlights the top 10 key influencers for sales, revealing that Loan_Amount, Marketing_Spend, and Income are the most significant drivers, followed closely by Credit_Score, Spending_Score, and Age. This suggests that financially capable customers, supported by targeted marketing efforts, contribute heavily to sales performance. Behavioral factors like Purchase_Frequency also play an important role, while demographic and contextual variables such as Previous_Defaults, Gender, and Seasonality offer additional insight for refining customer segmentation.
  The second graph, which visualizes sales data with anomaly detection, identifies both high and low sales across the customer base. These anomalies may indicate high-value opportunities, potential fraud, or signs of customer disengagement and churn. For the business, these findings underscore the importance of targeting high-income, financially stable customers, optimizing marketing spend, and continuously monitoring irregular sales patterns to enhance decision-making, improve customer retention, and drive revenue growth.
