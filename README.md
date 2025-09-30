@@ -18,7 +18,9 @@ The first graph highlights the top 10 key influencers for sales, revealing that 
  The second graph, which visualizes sales data with anomaly detection, identifies both high and low sales across the customer base. These anomalies may indicate high-value opportunities, potential fraud, or signs of customer disengagement and churn. For the business, these findings underscore the importance of targeting high-income, financially stable customers, optimizing marketing spend, and continuously monitoring irregular sales patterns to enhance decision-making, improve customer retention, and drive revenue growth.
 
 The SARIMAX model results [Ref: python_Script, line code11], based on scaled inputs, show that all selected features have a statistically significant impact on sales. Loan_Amount (coefficient = 0.217, p < 0.001) and Marketing_Spend (coefficient = 0.214, p < 0.001) are the strongest predictors, indicating that increases in either variable lead to the largest relative boosts in sales. This suggests that offering larger loans and increasing marketing investments are highly effective strategies for driving revenue. Credit_Score (coefficient = 0.159, p = 0.004), Spending_Score (coefficient = 0.147, p = 0.002), and Purchase_Frequency (coefficient = 0.132, p = 0.004) also show meaningful and statistically significant positive effects, highlighting the importance of targeting financially stable, high-spending, and loyal customers. Age (coefficient = 0.101, p = 0.043) has a smaller but still positive influence, suggesting older customers may be more financially stable or consistent purchasers. Model diagnostics support these findings, with low residual variance (σ² = 0.0952), no autocorrelation (Ljung-Box p = 0.28), and stable variance across errors (heteroskedasticity p = 0.70).
+
 ✅ Strategic Recommendations:
+
 •	Expand loan offerings:
 Increase access to financing options for qualified customers, as higher loan amounts are strongly linked to higher sales.
 •	Increase and optimize marketing spend:
@@ -31,21 +33,29 @@ Focus marketing and promotions on customers with high spending scores and past p
 Reward frequent buyers with incentives or exclusive offers to reinforce repeat purchases and long-term engagement.
 •	Segment customers by age and behaviour:
 Create personalized messaging or product bundles tailored to older, consistent buyers who exhibit strong engagement patterns.
+
 📊 2. Feature Importance for Churn Prediction
+
 The decision tree feature importance plot reveals that Income is the most critical factor in predicting customer churn, contributing approximately 36% of the total model decision weight. Other notable features include Credit Score, Age, and Spending Score, all contributing meaningfully. Variables like Loan Amount, Purchase Frequency, and Seasonality have negligible importance, suggesting they are not strong predictors in this model.
 🌳 3. Decision Tree Structure & Churn Logic
 The decision tree visual shows how key features interact to predict churn:
 •	Customers with low income (≤ 0.185 scaled) and low age or spending score are classified as No Churn, indicating that younger, lower-income segments may still be engaged if their spending behaviour is healthy.
 •	Customers with high income but low marketing engagement or poor credit tend to be classified as churn risks.
 •	Gender, Spending Score, and Credit Score influence several terminal nodes, highlighting their nuanced roles in retention and churn likelihood. These splits provide interpretable business rules that can be applied to segment customers by risk level and drive targeted retention actions.
+
 🎯 4. Classification Performance
+
 The decision tree classifier achieved an overall accuracy of 63.9% on the test set. However, the recall for churners (class 1) is only 19%, and precision is 24%, indicating the model is weak at identifying true churn cases. This is a key limitation: while the model performs reasonably overall, its practical use for churn prevention is limited unless improved.
+
 🧠 5. Customer Segmentation with K-Means
+
 The K-Means clustering visualizations (with and without PCA) show two clearly defined customer clusters, based on Credit_Score and Spending_Score:
 •	One cluster (e.g., high-spending, high-credit) likely represents high-value, low-risk customers.
 •	The other cluster may represent low-spending or financially at-risk customers.
 This segmentation is highly actionable: it allows the business to develop differentiated marketing and retention strategies, such as loyalty rewards for high-value customers or re-engagement offers for at-risk segments.
+
 ✅Recommendations
+
 •	Enhance churn prediction by introducing more behavioral, transactional, and time-based features (e.g., time since last purchase, account age).
 •	Target retention efforts on customers identified in churn-prone branches of the decision tree (e.g., high-income but disengaged or low-credit individuals).
 •	Use the K-Means clusters for personalized campaign design—retain high-value users and uplift lower-value ones with targeted promotions.
