@@ -23,24 +23,33 @@ The SARIMAX model results [Ref: python_Script, line code11], based on scaled inp
 
 •	Expand loan offerings:
 Increase access to financing options for qualified customers, as higher loan amounts are strongly linked to higher sales.
+
 •	Increase and optimize marketing spend:
 Allocate more resources to marketing, particularly toward channels and customer segments that demonstrate high responsiveness.
+
 •	Target financially strong customers:
 Use credit score data to identify and prioritize customers who are more likely to convert and spend more.
+
 •	Leverage spending behaviour:
 Focus marketing and promotions on customers with high spending scores and past purchase volumes.
+
 •	Invest in loyalty and retention programs:
 Reward frequent buyers with incentives or exclusive offers to reinforce repeat purchases and long-term engagement.
+
 •	Segment customers by age and behaviour:
 Create personalized messaging or product bundles tailored to older, consistent buyers who exhibit strong engagement patterns.
 
 📊 2. Feature Importance for Churn Prediction
 
 The decision tree feature importance plot reveals that Income is the most critical factor in predicting customer churn, contributing approximately 36% of the total model decision weight. Other notable features include Credit Score, Age, and Spending Score, all contributing meaningfully. Variables like Loan Amount, Purchase Frequency, and Seasonality have negligible importance, suggesting they are not strong predictors in this model.
+
 🌳 3. Decision Tree Structure & Churn Logic
 The decision tree visual shows how key features interact to predict churn:
+
 •	Customers with low income (≤ 0.185 scaled) and low age or spending score are classified as No Churn, indicating that younger, lower-income segments may still be engaged if their spending behaviour is healthy.
+
 •	Customers with high income but low marketing engagement or poor credit tend to be classified as churn risks.
+
 •	Gender, Spending Score, and Credit Score influence several terminal nodes, highlighting their nuanced roles in retention and churn likelihood. These splits provide interpretable business rules that can be applied to segment customers by risk level and drive targeted retention actions.
 
 🎯 4. Classification Performance
@@ -50,17 +59,24 @@ The decision tree classifier achieved an overall accuracy of 63.9% on the test s
 🧠 5. Customer Segmentation with K-Means
 
 The K-Means clustering visualizations (with and without PCA) show two clearly defined customer clusters, based on Credit_Score and Spending_Score:
+
 •	One cluster (e.g., high-spending, high-credit) likely represents high-value, low-risk customers.
+
 •	The other cluster may represent low-spending or financially at-risk customers.
 This segmentation is highly actionable: it allows the business to develop differentiated marketing and retention strategies, such as loyalty rewards for high-value customers or re-engagement offers for at-risk segments.
 
 ✅Recommendations
 
 •	Enhance churn prediction by introducing more behavioral, transactional, and time-based features (e.g., time since last purchase, account age).
+
 •	Target retention efforts on customers identified in churn-prone branches of the decision tree (e.g., high-income but disengaged or low-credit individuals).
+
 •	Use the K-Means clusters for personalized campaign design—retain high-value users and uplift lower-value ones with targeted promotions.
+
 •	Monitor and retrain the model periodically to adapt to evolving customer behavior and market conditions.
+
 Conclusion
+
 This report has provided a comprehensive analysis of customer behavior and sales performance using a combination of data cleaning, exploratory analysis, predictive modeling, clustering, and time series forecasting. Key insights identified Loan_Amount, Marketing_Spend, and Income as the most influential drivers of sales, while Income, Credit_Score, and Age were the strongest predictors of churn. The SARIMAX model demonstrated that targeted financial and marketing strategies can significantly boost sales, while the decision tree and clustering models offered clear segmentation for churn prevention and customer engagement.
 Despite promising findings, the classification model's limited ability to detect churners highlights the need for enhanced feature engineering and more sophisticated algorithms. Future efforts should focus on incorporating behavioural and time-based indicators, as well as regular model retraining to reflect evolving customer patterns.
 Overall, the analysis delivers actionable recommendations that can inform both strategic and tactical decision-making—improving marketing efficiency, guiding credit strategy, strengthening customer retention, and ultimately driving sustainable business growth.
