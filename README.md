@@ -59,7 +59,7 @@ Models can guide optimised resource allocation and reduce churn.
 
 📂 Repository Contents
 
-Project_Week_4.ipynb → Main analysis notebook.
+Sales_Customer_Segmentation_Analysis_MD.ipynb → Main analysis notebook.
 
 cleaned_without_outliers.csv → Preprocessed dataset.
 
